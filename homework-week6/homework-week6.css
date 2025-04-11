@@ -1,0 +1,29 @@
+.background {
+    width: 300px;
+    height: 400px;
+    background-color: aliceblue;
+    padding-top: 20px;
+  }
+  .part1 {
+    width: 50%;
+    height: 250px;
+    background-color: orange;
+    border-radius: 8px;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+  .part1,
+  .part2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .part2 {
+    margin-top: 30px;
+    gap: 30px;
+  }
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
