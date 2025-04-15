@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     freeTips.style.display = count >= 10 && count < 20 ? "block" : "none";
     soldOut.style.display = count >= 20 ? "block" : "none";
     plusButton.style.backgroundColor = count >= 20 ? "red" : "";
-    plusButton.disabled = count >= 20 
-    minusButton.disabled = count <= 0
+    plusButton.disabled = count >= 20;
+    minusButton.disabled = count <= 0;
   }
   plusButton.addEventListener("click", () => {
-      count++;
-      sameFunction();
+    count++;
+    sameFunction();
   });
   minusButton.addEventListener("click", () => {
-      count--;
-      sameFunction();
+    count--;
+    sameFunction();
   });
   resetButton.addEventListener("click", () => {
     count = 0;
