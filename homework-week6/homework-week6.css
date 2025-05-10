@@ -1,3 +1,5 @@
+/* Rename this file to styles.css to follow naming conventions */
+
 .background {
   width: 300px;
   height: 400px;
@@ -12,12 +14,16 @@
   margin: 0 auto;
   font-size: 24px;
 }
+
+/* Nice use of shared styling! */
 .part1,.part2,span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .part2 {
+/* You can also consider using rem instead of px for scaling. 
+   Here is more about it: https://www.freecodecamp.org/news/css-units-when-to-use-each-one/ */
   margin-top: 30px;
   gap: 30px;
 }
