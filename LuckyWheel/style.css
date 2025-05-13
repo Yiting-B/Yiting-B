@@ -1,0 +1,105 @@
+h1 {
+  color: darkorange;
+  margin-left: 150px;
+}
+.luckyWheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: conic-gradient(
+    orange 0 50deg,
+    lightskyblue 0 100deg,
+    violet 0 150deg,
+    lightskyblue 0 200deg,
+    blueviolet 0 250deg,
+    violet 0 300deg,
+    lightgreen 0
+  );
+}
+.pointer {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid blue;
+  margin-left: 190px;
+}
+.prize {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 0;
+  transform-origin: bottom left;
+}
+.prize-text {
+  position: absolute;
+  width: 50px;
+  text-align: center;
+  left: 10px;
+  top: 30px;
+  transform-origin: center center;
+  color: black;
+  font-weight: bold;
+}
+.prize:nth-child(1) {
+  transform: rotate(10deg);
+}
+.prize:nth-child(1) .prize-text {
+  transform: rotate(-10deg);
+}
+
+.prize:nth-child(2) {
+  transform: rotate(60deg);
+}
+.prize:nth-child(2) .prize-text {
+  transform: rotate(-60deg);
+}
+
+.prize:nth-child(3) {
+  transform: rotate(110deg);
+}
+.prize:nth-child(3) .prize-text {
+  transform: rotate(-110deg);
+}
+
+.prize:nth-child(4) {
+  transform: rotate(160deg);
+}
+.prize:nth-child(4) .prize-text {
+  transform: rotate(-160deg);
+}
+
+.prize:nth-child(5) {
+  transform: rotate(210deg);
+}
+.prize:nth-child(5) .prize-text {
+  transform: rotate(-210deg);
+}
+
+.prize:nth-child(6) {
+  transform: rotate(260deg);
+}
+.prize:nth-child(6) .prize-text {
+  transform: rotate(-260deg);
+}
+
+.prize:nth-child(7) {
+  transform: rotate(320deg);
+}
+.prize:nth-child(7) .prize-text {
+  transform: rotate(-320deg);
+}
+.spinButton {
+  width: 70px;
+  height: 40px;
+  background-color: darkorange;
+  border-radius: 5px;
+  margin-left: 170px;
+  margin-top: 30px;
+}
