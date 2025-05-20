@@ -1,29 +1,38 @@
-const luckyWheel = document.querySelector(".luckyWheel");
-const spinButton = document.querySelector(".spinButton");
-const prize=[
+const pointer = document.getElementById("pointer");
+const wrapper = document.getElementById("wrapper");
+let onRotation = false;
+const rewards = [
+  "Save 5%",
+  "Save 10%",
+  "Save 5%",
+  "Save 15%",
+  "Save 10%",
+  "Save 15%",
   "Save 10%",
   "Save 20%",
-  "Save 15%",
-  "Save 20%",
-  "Save 30%",
-  "Save 15%",
-  "Spin Again"
 ];
-spinButton.addEventListener("click", function () {
-  spinButton.disabled = true;
-  const spinDuration = 5000;
-  const spinAngle = 80*Math.floor(Math.random()*360);
-  luckyWheel.style.transition=`transform ${spinDuration}ms`;
-  luckyWheel.style.transform = `rotate(-${spinAngle}deg)`;
-  setTimeout(() => {
-    spinButton.disabled = false;
-    const finalAngle = spinAngle % 360;
-    const sectorAngle = 360 / prize.length;
-    let prizeIndex = Math.floor((finalAngle + sectorAngle / 2) / sectorAngle) % prize.length;
-    const wonPrize = prize[prizeIndex];
-    alert(`Congrats,you get ${wonPrize} !`);
-  },spinDuration);
-});
+let currentDeg = 0;
 
-console.log(360/7)
-console.log(360%7)
+pointer.addEventListener("click", () => {
+  if (onRotation) return;
+  onRotation = true;
+
+  const rotateDeg = Math.random() * 360 + 1440;
+  currentDeg += rotateDeg;
+
+  const normalizedDeg = ((currentDeg % 360) + 22.5) % 360; 
+  const index = Math.floor(normalizedDeg / 45);
+  const rewardText = rewards[index];
+
+  wrapper.style.transition = "transform 4s cubic-bezier(0.33, 1, 0.68, 1)";
+  wrapper.style.transform = `rotate(${currentDeg}deg)`;
+
+  wrapper.addEventListener(
+    "transitionend",
+    () => {
+        alert("You won：" + rewardText);
+      onRotation = false;
+    },
+    { once: true }
+  ); 
+});
